@@ -107,16 +107,16 @@ void quick_sort(node_t **list)
     
             while (p) {
                 node_t *n = p;
-                p = CCCC;
+                p = p->next;
                 list_add(n->value > value ? &right : &left, n);
             }
 
             begin[i] = left;
-            end[i] = DDDD;
+            end[i] = list_tail(&left);
             begin[i + 1] = pivot;
             end[i + 1] = pivot;
             begin[i + 2] = right;
-            end[i + 2] = EEEE;
+            end[i + 2] = list_tail(&right);
 
             left = right = NULL;
             i += 2;
